@@ -1,3 +1,9 @@
+// Using two lists to store the indexes of the 0s in the matrix
+// Then converting all rows/cols of the stored index to 0
+// Time: O(mn), Space: O(m+n)
+
+
+
 public void setZeroes(int[][] matrix) {
         ArrayList<Integer>l1=new ArrayList<>();
         ArrayList<Integer>l2=new ArrayList<>();
