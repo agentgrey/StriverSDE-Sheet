@@ -6,37 +6,6 @@
 
 
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        int n = nums.length;
-        if (n < 4) return new ArrayList<>(); // it'll still be handled even if we don't write this condition
-        Arrays.sort(nums);
-
-        Set<List<Integer>> ans = new HashSet<>();
-
-        for (int i = 0; i < n; i++) {
-            for (int j =  i + 1; j < n; j++) {
-                for (int k =  j + 1; k < n; k++) {
-                    for (int l = k + 1; l < n; l++) {
-                        if (nums[i] + nums[j] + nums[k] + nums[l] == target) {
-                            ans.add(Arrays.asList(nums[i], nums[j], nums[k], nums[l]));
-                        }
-                    }
-                }
-            }
-        }
-
-        return new ArrayList(ans);
-    }
-}
-
-// TC: O(n * logn) + O(n ^ 4) => O(n ^ 4)
-// SC: O(1) - Ignoring output array
-2. Optimal solution (Two pointers):
-We iterate using the first for loop and find the remaining 3 elements by the same 3Sum approach.
-
-Or we can say, we find the first two elements using nested for loops and find the remaining 2 elements by the TwoSum approach.
-
-class Solution {
-    public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> ans = new ArrayList<>();
         int n = nums.length;
 
